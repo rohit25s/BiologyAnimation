@@ -1,4 +1,4 @@
-function Matching(ele, clicked, matched, error) {
+function Matching(ele, clicked, matched, error, ctx) {
   if(check_if_matched(ele, matched)){
     // do nothing.
     return ;
@@ -14,6 +14,33 @@ function Matching(ele, clicked, matched, error) {
     }
     else if(check_if_match(ele, clicked)){
       // matching
+      ctx.beginPath();
+      
+      switch ($(ele).attr("id")) {
+        case "1":
+          ctx.moveTo(60, 195);
+          ctx.lineTo(550, 310);
+          break;
+        case "2":
+          ctx.moveTo(200, 195);
+          ctx.lineTo(400, 310);
+          break;
+        case "3":
+          ctx.moveTo(300, 195);
+          ctx.lineTo(60, 310);
+          break;
+        case "4":
+          ctx.moveTo(420, 195);
+          ctx.lineTo(270, 310);
+          break;
+        case "5":
+          ctx.moveTo(540, 195);
+          ctx.lineTo(170, 310);
+          break;
+      }
+
+      ctx.stroke();
+      
       border_turns_green(ele);
       border_turns_green(clicked[0]);
       clicked.pop();
