@@ -3,37 +3,40 @@
 <head>
   <title>Match Maker</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="css/slide.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
   <script type="text/javascript" src="js/iframeResizer.contentWindow.min.js"></script>
-  <script type="text/javascript" src="js/utils.js"></script>
   <script type="text/javascript" src="js/slide63.js"></script>
 
   <div id="masterContainer" class="masterContainer" data-viewportNarrow="false">
-    <div style = "font-size: 18px; "> Select one Image from the top and the corresponding answer image to match them </div>
+    <header id="title">
+      <div id="subtext"> Select one Image from the top and the corresponding answer image to match them </div>
+    </header>
     <div class="image-container" >
-        <canvas id="canvas" width="600" height="500">
+        <canvas id="canvas" width="900" height="450">
         </canvas>
-        <div class="row-1">
-          <div class="box" style="position: absolute;top: 10px;left: 0px;width: 125px;height: 180px" id="1"></div>
-          <div class="box" style="position: absolute;top: 10px;left: 135px;width: 100px;height: 180px" id="2"></div>
-          <div class="box" style="position: absolute;top: 10px;left: 245px;width: 105px;height: 180px" id="3"></div>
-          <div class="box" style="position: absolute;top: 10px;left: 360px;width: 100px;height:180px" id="4"></div>
-          <div class="box" style="position: absolute;top: 10px;left: 470px;width: 120px;height:180px" id="5"></div>
-        </div>
-        <div class="row-2">
-          <div class="box" style="position: absolute;top: 310px;left: 0px;width: 115px;height: 180px" id="3"></div>
-          <div class="box" style="position: absolute;top: 310px;left: 125px;width: 75px;height: 180px"id="5"></div>
-          <div class="box" style="position: absolute;top: 310px;left: 210px;width: 100px;height: 180px" id="4"></div>
-          <div class="box" style="position: absolute;top: 310px;left: 320px;width: 165px;height: 180px"id="2"></div>
-          <div class="box" style="position: absolute;top: 310px;left: 495px;width: 95px;height: 180px"id="1"></div>
-        </div>
+
+        <ul id="imageListItems" class="row-1">
+          <li id="image1" class="imageList"><img src="img/t1.png"></li>
+          <li id="image2" class="imageList"><img src="img/t2.png"></li>
+          <li id="image3" class="imageList"><img src="img/t3.png"></li>
+          <li id="image4" class="imageList"><img src="img/t4.png"></li>
+          <li id="image5" class="imageList"><img src="img/t5.png"></li>
+        </ul>
+
+        <ul id="imageListItems" class="row-2">
+          <li id="image1" class="imageList"><img src="img/b1.png"></li>
+          <li id="image2" class="imageList"><img src="img/b2.png"></li>
+          <li id="image3" class="imageList"><img src="img/b3.png"></li>
+          <li id="image4" class="imageList"><img src="img/b4.png"></li>
+          <li id="image5" class="imageList"><img src="img/b5.png"></li>
+        </ul>
     </div>
-    <div id="Hint" style="position: absolute; top: 600px; left: 500px; font-size: 18px; color: red"></div>
+    <div id="Hint"></div>
   </div>
   <div id="viewPortNarrowThreshold"></div >
 </body>
