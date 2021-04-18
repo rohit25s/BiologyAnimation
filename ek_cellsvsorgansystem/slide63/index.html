@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="slide.css">
+  <title>Match Maker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
   <script type="text/javascript" src="js/iframeResizer.contentWindow.min.js"></script>
-  <script type="text/javascript" src="my_modules/utils.js"></script>
-  <script type="text/javascript" src="slide63.js"></script>
+  <script type="text/javascript" src="js/slide63.js"></script>
 
   <div id="masterContainer" class="masterContainer" data-viewportNarrow="false">
-    <div style = "font-size : 18px; "> Select one Image from the top and the corresponding answer image to match them </div>
+    <header id="title">
+      <div id="subtext"> Select one Image from the top and the corresponding answer image to match them </div>
+    </header>
     <div class="image-container" >
-        <img width="600" style= "z-index:-1" src="slide63_1.png">
-        <div class="row-1">
-          <div class="box" style="position: absolute;top: 10px;left: 5px;width: 125px;height: 80px" id="1">1</div>
-          <div class="box" style="position: absolute;top: 10px;left: 140px;width: 100px; height: 80px" id="2">2</div>
-          <div class="box" style="position: absolute;top: 10px;left: 250px;width: 105px;height: 80px" id="3">3</div>
-          <div class="box" style="position: absolute;top: 10px;left: 365px;width: 100px; height:80px" id="4">4</div>
-          <div class="box" style="position: absolute;top: 10px;left: 475px;width: 120px; height:80px" id="5">5</div>
-        </div>
-        <div class="row-2">
-          <div class="box" style="position: absolute;top: 110px;left: 5px;width: 115px;height: 90px" id="3" >1</div>
-          <div class="box" style="position: absolute;top: 110px;left: 130px;width: 75px;height: 90px"id="5">2</div>
-          <div class="box" style="position: absolute;top: 110px;left: 215px;width: 100px;height: 90px" id="4" >3</div>
-          <div class="box" style="position: absolute;top: 110px;left: 325px;width: 165px;height: 90px"id="2" >4</div>
-          <div class="box" style="position: absolute;top: 110px;left: 500px;width: 95px;height: 90px"id="1" >5</div>
-        </div>
+        <canvas id="canvas" width="900" height="450">
+        </canvas>
+
+        <ul id="imageListItems" class="row-1">
+          <li id="image1" class="imageList"><img src="img/t1.png"></li>
+          <li id="image2" class="imageList"><img src="img/t2.png"></li>
+          <li id="image3" class="imageList"><img src="img/t3.png"></li>
+          <li id="image4" class="imageList"><img src="img/t4.png"></li>
+          <li id="image5" class="imageList"><img src="img/t5.png"></li>
+        </ul>
+
+        <ul id="imageListItems" class="row-2">
+          <li id="image1" class="imageList"><img src="img/b1.png"></li>
+          <li id="image2" class="imageList"><img src="img/b2.png"></li>
+          <li id="image3" class="imageList"><img src="img/b3.png"></li>
+          <li id="image4" class="imageList"><img src="img/b4.png"></li>
+          <li id="image5" class="imageList"><img src="img/b5.png"></li>
+        </ul>
     </div>
-    <div id="Hint" style="position: absolute; top: 250px; left: 20px; font-size : 18px; color: red"></div>
+    <div id="Hint"></div>
   </div>
   <div id="viewPortNarrowThreshold"></div >
 </body>
