@@ -67,6 +67,13 @@ $(document).ready(function () {
                 $q.droppable('disable');
                 $q.off('dblclick');
             }else{
+				if($q.hasClass("has-answer")){
+				$q.css('background', 'red');
+				
+				}
+				$q.children().draggable('disable');
+                $q.droppable('disable');
+                $q.off('dblclick');
                 num_wrong += 1;
             }
         });
