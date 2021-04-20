@@ -91,14 +91,16 @@ $(document).ready(function () {
                 if ($q.hasClass("has-answer")) {
                     $q.addClass('incorrect');
                 }
-
-                $q.children().draggable('enable');
-                $q.droppable('enable');
+				$q.children().draggable('disable');
+                $q.droppable('disable');
+                $q.off('dblclick');
             }
         });
 
-        $('#result').text(`You answered ${numCorrect}/11 questions correctly!`);
-
+        if(numCorrect == 11)
+			$('#result').text(`You answered ${numCorrect}/11 questions correctly!`);
+		else
+			$('#result').text(`You answered ${numCorrect}/11 questions correctly! Hint: Go back and study the diagram in the section Organisms`);
         window.setTimeout(function() {
             $('#result').text('');
         }, 2500)
