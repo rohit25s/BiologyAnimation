@@ -192,8 +192,9 @@ div.submit-container {
 
 #result {
     position: absolute;
-    bottom: -5%;
+    bottom: 5%;
     font-size: 1.5vw;
     font-weight: bold;
     float: center;
+	left: -1000px;
 }
