@@ -96,13 +96,26 @@ $(document).ready(function () {
                 $q.off('dblclick');
             }
         });
+		var $hint_content = $('.hint-content');
+		
+        if(numCorrect == 11){
+			//$('#result').text(`You answered all questions correctly!`);
+			$hint_content.text('' );
+            $hint_content.append('<p>You answered all questions correctly!</p>' );
+		}
+		else{
+			//$('#result').text(`You answered ${numCorrect}/11 questions correctly! Hint: Go back and study the diagram in the section Organisms`);
+			$hint_content.text('' );
+            $hint_content.append('<p>You answered ' + numCorrect +'/11 answers correctly!</p>' );
+            $hint_content.append('<p>Hint: Go back and study the diagram in the section Organisms.</p>' );
+		}
+		$('.hint').css('visibility', 'visible');
+    });
+	 $('.question').each(function(){
+        update($(this));
+    });
 
-        if(numCorrect == 11)
-			$('#result').text(`You answered ${numCorrect}/11 questions correctly!`);
-		else
-			$('#result').text(`You answered ${numCorrect}/11 questions correctly! Hint: Go back and study the diagram in the section Organisms`);
-        window.setTimeout(function() {
-            $('#result').text('');
-        }, 2500)
+    $('.hint').click(function(){
+        $(this).css("visibility", "hidden");
     });
 });
