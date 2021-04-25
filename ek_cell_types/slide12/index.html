@@ -89,7 +89,28 @@
        margin-right: 16.5vw;
     }
 
-    @media only screen and (min-width: 992px) {
+    @media only screen and (min-width: 1600px) {
+		.container {
+            width: 31vw;
+            margin-left: 34.5vw;
+            margin-right: 34.5vw;
+		}
+
+        .big_box {
+            width: 30vw;
+            margin-left: 35vw;
+            margin-right: 35vw;
+        }
+
+        .big_box2 {
+            width: 30vw;
+            margin-left: 35vw;
+            margin-right: 35vw;
+        }
+	}
+
+    @media only screen and (min-width: 1300px) and (max-width: 1850px) {
+
 		.container {
             width: 51vw;
             margin-left: 24.5vw;
@@ -107,6 +128,57 @@
             margin-left: 25vw;
             margin-right: 25vw;
         }
+
+	}
+
+    /*For iPhone*/
+    @media only screen and (max-width: 450px) {
+		.container {
+            width: 95vw;
+            margin-left: 0vw;
+            margin-right: 0vw;
+		}
+
+        .big_box {
+            width: 95vw;
+            margin-left: 0vw;
+            margin-right: 0vw;
+        }
+
+        .big_box2 {
+            width: 95vw;
+            margin-left: 0vw;
+            margin-right: 0vw;
+        }
+	}
+
+    /*For iPad & iPadPro*/
+    @media only screen and (min-width: 700px) and (max-width: 1300px) {
+
+	.container {
+       width: 67vw;
+       height: 80vh;
+       margin-top: 0vh;
+       margin-left: 16.5vw;
+       margin-right: 16.5vw;
+		}
+
+    .big_box {
+        width: 66vw;
+        height: 7.2vh;
+        margin-left: 17vw;
+        margin-right: 17vw;
+        border: solid 1px;
+        }
+
+    .big_box2 {
+        width: 66vw;
+        height: 10vh;
+        margin-left: 17vw;
+        margin-right: 17vw;
+        border: solid 1px;
+        }
+
 	}
 
   </style>
