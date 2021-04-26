@@ -1,5 +1,12 @@
 $(document).ready(function () {
-    var move_to = function( $obj, $target) {
+	
+	$.getJSON("js/parameters.json", function (data) {
+		var wordBank = $("#word-bank");
+		data.data.sort(function (a, b) {return Math.random() - 0.5;});
+		data.data.forEach(function (dataObj, index ) {
+			wordBank.append($(`<div class="answer" id="${dataObj.id}">${dataObj.value}</div>`))
+		})
+		var move_to = function( $obj, $target) {
         $parent = $obj.parent();
         $parent.detach($obj);
         $target.append($obj);
@@ -27,8 +34,7 @@ $(document).ready(function () {
         } else if ($con.hasClass("word-bank")) {
         }
     }
-
-    $(".answer").draggable({
+	$(".answer").draggable({
         revert: "invalid",
         revertDuration: 0,
         stop:function(ev, ui) {
@@ -96,13 +102,27 @@ $(document).ready(function () {
                 $q.off('dblclick');
             }
         });
-
-        if(numCorrect == 11)
-			$('#result').text(`You answered ${numCorrect}/11 questions correctly!`);
-		else
-			$('#result').text(`You answered ${numCorrect}/11 questions correctly! Hint: Go back and study the diagram in the section Organisms`);
-        window.setTimeout(function() {
-            $('#result').text('');
-        }, 2500)
+		var $hint_content = $('.hint-content');
+		
+        if(numCorrect == 11){
+			//$('#result').text(`You answered all questions correctly!`);
+			$hint_content.text('' );
+            $hint_content.append('<p>You answered all questions correctly!</p>' );
+		}
+		else{
+			//$('#result').text(`You answered ${numCorrect}/11 questions correctly! Hint: Go back and study the diagram in the section Organisms`);
+			$hint_content.text('' );
+            $hint_content.append('<p>You answered ' + numCorrect +'/11 answers correctly!</p>' );
+            $hint_content.append('<p>Hint: Go back and study the diagram in the section Organisms.</p>' );
+		}
+		$('.hint').css('visibility', 'visible');
     });
+	 $('.question').each(function(){
+        update($(this));
+    });
+
+    $('.hint').click(function(){
+        $(this).css("visibility", "hidden");
+    });
+	})    
 });

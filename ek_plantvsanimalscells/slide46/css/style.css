@@ -98,15 +98,6 @@ and (max-device-width : 1024px) {
         font-size: 3vw !important;
         padding: 10px 30px !important;
     }
-
-    #result {
-        top: 180% !important;
-        bottom: 0 !important;
-        text-align: center;
-        width: 90%;
-        height: 10%;
-        font-size: 3vw !important;
-    }
 }
 
 div.answer {
@@ -190,11 +181,25 @@ div.submit-container {
     background: #BB2525;
 }
 
-#result {
+div.hint{
     position: absolute;
-    bottom: 5%;
-    font-size: 1.5vw;
-    font-weight: bold;
-    float: center;
-	left: -1000px;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    opacity: 0.9;
+    background-color: white;
+    visibility: hidden;
+}
+
+div.hint-content{
+    position: absolute;
+    width: 100%;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    text-align: center;
+    height: 30%;
+    margin:auto;
 }
