@@ -1,7 +1,7 @@
 /* Variabes */
 /* Mixin's */
 body {
-  background: #90ee90;
+  background: #40B0A6;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   color: #fff;
   /*height: 100%;*/
@@ -10,7 +10,7 @@ body {
   overflow-x: 				hidden;
   margin: 0 auto 0 auto;
   position: relative;
-  
+
 }
 
 .wrappper {
@@ -67,7 +67,7 @@ p {
   height: 30px;
   padding-top: 10px;
   background: #fff;
-  color: #90ee90;
+  color: #E1BE6A;
   cursor: pointer;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -76,7 +76,7 @@ p {
   border: solid 1px #fff;
 }
 #alphabet li:hover {
-  background: #90ee90;
+  background: #FF9600;
   border: solid 1px #fff;
   color: #fff;
 }
@@ -127,7 +127,7 @@ button {
   -webkit-border-radius: 5px;
   border-radius: 5px;
   -khtml-border-radius: 5px;
-  background: #90ee90;
+  background: #FF9600;
   color: #fff;
   border: solid 1px #fff;
   text-decoration: none;
@@ -139,12 +139,12 @@ button {
   outline: none;
 }
 button:hover {
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   background: #fff;
   border: solid 1px #fff;
-  color: #90ee90;
+  color: #FF9600;
 }
 
 @media (max-width: 767px) {
