@@ -7,26 +7,37 @@ body {
     width: 100%;
     padding-top: 50%;
 }
-
+	.q1{
+		top:175px;
+	}
+	.q2{
+		top:260px;
+	}
+	.q3{
+		top:340px;
+	}
+	.q4{
+		top:433px;
+	}
 div.question-container {
     position: absolute;
     text-align: center;
-    top: 0;
-    left: 15%;
-    height: 100%;
-    width: 60%;
-    background-image: url("slide53_1.png");
+    top: 20px;
+    left: 100px;
+    height: 640px;
+    width: 720px;
+    background-image: url(slide53_1.png);
     background-repeat: no-repeat;
     background-size: 70%;
 }
 
 
 div.answer-container{
-    position: absolute;
-    top: 0;
-    left: 65%;
-    width: 35%; 
-    height: 100%;
+	position: absolute;
+    top: 60px;
+    left: 70%;
+    width: 235px;
+    height: 380px;
     opacity: 1.0;
     background-color: white;
 }
@@ -41,13 +52,10 @@ div.word-bank{
 }
 div.submit-container{
     position: absolute;
-    top: 80%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    text-align: center;
-    display: table-cell;
-    padding-top: 7%;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		text-align: center;
 }
 #submit{
     font-size: 1.5vw;
@@ -97,6 +105,10 @@ div.hint{
     visibility: hidden;
 }
 
+.q12
+		
+
+
 div.hint-content{
     position: absolute;
     width: 100%;
@@ -107,4 +119,68 @@ div.hint-content{
     text-align: center;
     height: 30%;
     margin:auto;
+}
+
+@media screen and (max-width: 920px) {
+	div.submit-container {
+		
+	}
+	
+	div.question-container {
+		width: 420px;
+		height: 360px;
+	}
+
+	div.answer-container{
+		top: 400px;
+		left: 145px;
+		width: 200px; 
+		height: 250px
+	}
+		.q1{
+		top:102px;
+		
+		}
+		.q12
+		{font-size: 7px !important;
+			
+		}
+		.q22
+		{font-size: 7px !important;
+			
+		}
+		.q32
+		{font-size: 7px !important;
+			
+		}
+		.q42
+		{font-size: 7px !important;
+			
+		}
+		
+	.c1{
+		top:98px;
+	}
+	.q2{
+		top:153px;
+		
+	}
+	.c2{
+		top:149px;
+	}
+	.q3{
+		top:200px;
+		
+	}
+	.c3{
+		top:196px;
+	}
+	.q4{
+		top:250px;
+	
+	}
+	.c4{
+		top:246px;
+	}
+
 }

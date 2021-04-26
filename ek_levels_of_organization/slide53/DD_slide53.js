@@ -68,6 +68,9 @@ $(document).ready(function () {
                 $q.off('dblclick');
             }else{
                 num_wrong += 1;
+				$q.children().draggable('disable');
+                $q.droppable('disable');
+                $q.off('dblclick');
                 $q.css('background', '#BB2525');
             }
         });
