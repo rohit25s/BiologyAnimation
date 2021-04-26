@@ -1,12 +1,12 @@
 window.onload = function () {
 
-  var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-        'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-        't', 'u', 'v', 'w', 'x', 'y', 'z'];
-  
+var alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
+      'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S',
+      'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+
 
   var getHint ;          // Word getHint
-  var word = "photosynthesis"; // Selected word
+  var word = "PHOTOSYNTHESIS"; // Selected word
   var guess ;             // Guess
   var geusses = [ ];      // Stored geusses
   var lives ;             // Lives
@@ -16,8 +16,9 @@ window.onload = function () {
   // Get elements
   var showLives = document.getElementById("mylives");
   var getHint = document.getElementById("hint");
+  var resetGame = document.getElementById('reset');
   var showClue = document.getElementById("clue");
-  
+
   var state1 = 0;
 
   // create alphabet ul
@@ -35,7 +36,6 @@ window.onload = function () {
       letters.appendChild(list);
     }
   }
-    
 
   // Create geusses ul
    result = function () {
@@ -58,12 +58,23 @@ window.onload = function () {
       correct.appendChild(guess);
     }
   }
-  
+  function setGameOver(){
+    document.getElementById('alphabet').style.pointerEvents = 'none';
+    resetGame.disabled = false;
+  }
+
+
+
   // Show lives
    comments = function () {
+    showLives.style.color = "#FFFFFF";
+    //showLives.style.fontSize = "1.6em";
     showLives.innerHTML = "You have " + lives + " lives";
     if (lives < 1) {
-      showLives.innerHTML = "Game Over";
+      showLives.style.color = "#8B0000";
+      //showLives.style.fontSize = "2.2em";
+      showLives.innerHTML = "*** GAME OVER ***";
+      setGameOver();
     }
     for (var i = 0; i < geusses.length; i++) {
       if (counter + space === geusses.length) {
@@ -78,13 +89,13 @@ window.onload = function () {
     show_image(drawArray[drawMe]);
   }
 
-  
+
    // Hangman
   	function removeElement(id) {
 		var elem = document.getElementById(id);
 		return elem.parentNode.removeChild(elem);
-	}	
-    var img = document.createElement("img");    
+	}
+    var img = document.createElement("img");
    function show_image(src) {
 	if (state1 == 0) {
 			img.setAttribute("id", "pic");
@@ -98,24 +109,24 @@ window.onload = function () {
 			removeElement("pic1");
 			img.setAttribute("id", "pic");
 			state1 = 1;
-	}		
+	}
     img.src = src;
     img.width = 200;
     img.height = 200;
     img.hspace = 200;
-	img.style.position = "absolute";
-	img.style.top = "250px";
-	img.style.left = "800px";
+	  img.style.position = "auto";
+	  img.style.top = "250px";
+	  img.style.left = "900px";
     document.body.appendChild(img);
 	}
-   
+
    layer1 = "layer1.png";
    layer2 = "layer2.png";
    layer3 = "layer3.png";
    layer4 = "layer4.png";
    layer5 = "layer5.png";
-  
-  drawArray = [layer5,layer4,layer3,layer2,layer1]; 
+
+  drawArray = [layer5,layer4,layer3,layer2,layer1];
 
 
   // OnClick Function
@@ -128,7 +139,7 @@ window.onload = function () {
         if (word[i] === geuss) {
           geusses[i].innerHTML = geuss;
           counter += 1;
-        } 
+        }
       }
       var j = (word.indexOf(geuss));
       if (j === -1) {
@@ -141,13 +152,14 @@ window.onload = function () {
       }
     }
   }
-  
-    
+
+
   // Play
   play = function () {
     word = word.replace(/\s/g, "-");
     console.log(word);
     buttons();
+    resetGame.disabled = true;
     geusses = [ ];
     lives = 4;
     counter = 0;
@@ -158,7 +170,7 @@ window.onload = function () {
   }
 
   play();
-  
+
   // Hint
 
     hint.onclick = function() {
@@ -172,12 +184,14 @@ window.onload = function () {
 
    // Reset
 
-  document.getElementById('reset').onclick = function() {
+
+  resetGame.onclick = function() {
     correct.parentNode.removeChild(correct);
     letters.parentNode.removeChild(letters);
-    showClue.innerHTML = "";
-	img.remove();	
-	state1 = 0; 
+    showClue.textContent = "Clue: - "
+
+	//img.remove();
+	state1 = 0;
     play();
   }
 }
