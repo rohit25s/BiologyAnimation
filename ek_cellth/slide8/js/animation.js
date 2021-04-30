@@ -1,41 +1,40 @@
 $(document).ready(function () {
+    
+    var answers= $("#word-bank");
+    data.sort(() => .5 - Math.random());
+    data.forEach(function (item) {
+        console.log(item);
+        answers.append($(`<div class="answer" id="${item["id"]}" >${item["value"]}</div>`))
+    });
 
-	
-	$.getJSON("js/parameters.json", function(data) {
-		var answers= $("#word-bank");
-		data.data.sort(function() { return .5 - Math.random();});
-		data.data.forEach(function (dataObj,index){
-			answers.append($(`<div class="answer" id="${dataObj.id}" >${dataObj.value}</div>`))
-		})
-		
-		    var move_to = function( $obj, $target){
+	var move_to = function($obj, $target) {
         $parent = $obj.parent();
         $parent.detach($obj);
         $target.append($obj);
         update($parent);
         update($target);
     }
-    var update = function($con){
+
+    var update = function($con) {
         if($con.hasClass("question")){
             $children = $con.children();
             if($children.length == 0){
                 $con.text($con.attr("id"));
             } 
-            if($children.hasClass("answer")){
+            if ($children.hasClass("answer")) {
                 $con.addClass("has-answer");
                 $con.contents().each(function(){
                     if(!$(this).hasClass("answer")){
                         $(this).remove();
                     }
                 });
-            }else{
+            } else {
                 $con.removeClass("has-answer");
             }
-        }else if($con.hasClass("word-bank")){
+        } else if ($con.hasClass("word-bank")) {
         }
     }
 			
-	
     $(".answer").draggable({
         revert: "invalid",
         revertDuration: 0,
@@ -90,28 +89,24 @@ $(document).ready(function () {
         });
 
         var $hint_content = $('.hint-content');
-        if(num_wrong == 0){
-            $hint_content.text('' );
+        if (num_wrong == 0) {
+            $hint_content.text('');
             $hint_content.append('<p>You got them all right!</p>' );
-        }else{
-            $hint_content.text('' );
+        } else {
+            $hint_content.text('');
             $hint_content.append('<p>You got ' + num_wrong +' answers wrong.</p>' );
             $hint_content.append('<p>Hint: Go back and read about the Cell Theory Slides.</p>' );
         }
+
         $('.hint').css('visibility', 'visible');
     });
 
-    $('.question').each(function(){
+    $('.question').each(function() {
         update($(this));
     });
 
-    $('.hint').click(function(){
+    $('.hint').click(function() {
         $(this).css("visibility", "hidden");
     });
-		
-		
-	})
-	
-	
-
+				
 });

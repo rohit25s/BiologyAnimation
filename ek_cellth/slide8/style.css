@@ -110,23 +110,24 @@ div.hint-content{
 
 @media screen and (max-width: 920px) {
 	div.answer-container{
-    position: absolute;
-    top: 60%;
-    left: 40%;
-    width: 30%; 
-    height: 50%;
-    opacity: 1.0;
-    background-color: white;
-}
-div.question-container {
-    position: absolute;
-    text-align: center;
-    top: 0;
-    left: 20%;
-    height: 100%;
-    width: 70%;
-    background-image: url("celltheory.JPG");
-    background-repeat: no-repeat;
-    background-size: 100%;
-}
+        position: absolute;
+        top: 60%;
+        left: 40%;
+        width: 30%; 
+        height: 50%;
+        opacity: 1.0;
+        background-color: white;
+    }
+
+    div.question-container {
+        position: absolute;
+        text-align: center;
+        top: 0;
+        left: 20%;
+        height: 100%;
+        width: 70%;
+        background-image: url("celltheory.JPG");
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
 }

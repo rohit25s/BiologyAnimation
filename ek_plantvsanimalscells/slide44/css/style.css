@@ -48,6 +48,29 @@ p {
   font-size: 1.6em;
 }
 
+img {
+  position: absolute;
+  top: 250px;
+  left: 900px;
+  width: 200px;
+  height: 200px;
+  margin: 0 200px;
+}
+
+@media only screen and (max-device-width: 480px) {
+  img {
+    top: 850px;
+    left: 200px;
+  }
+}
+
+@media only screen and (device-width: 768px) {
+  img {
+    top: 600px;
+    left: 200px;
+  }
+}
+
 #alphabet {
   margin: 15px auto;
   padding: 0;

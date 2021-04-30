@@ -1,12 +1,13 @@
 $(document).ready(function () {
+
+    var answers= $("#word-bank");
+    data.sort(() => .5 - Math.random());
+    data.forEach(function (item) {
+        console.log(item);
+        answers.append($(`<div class="answer" id="${item["id"]}" >${item["value"]}</div>`))
+    });
 	
-	$.getJSON("js/parameters.json", function (data) {
-		var wordBank = $("#word-bank");
-		data.data.sort(function (a, b) {return Math.random() - 0.5;});
-		data.data.forEach(function (dataObj, index ) {
-			wordBank.append($(`<div class="answer" id="${dataObj.id}">${dataObj.value}</div>`))
-		})
-		var move_to = function( $obj, $target) {
+    var move_to = function($obj, $target) {
         $parent = $obj.parent();
         $parent.detach($obj);
         $target.append($obj);
@@ -124,5 +125,4 @@ $(document).ready(function () {
     $('.hint').click(function(){
         $(this).css("visibility", "hidden");
     });
-	})    
 });

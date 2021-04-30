@@ -95,30 +95,24 @@ var alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
 		var elem = document.getElementById(id);
 		return elem.parentNode.removeChild(elem);
 	}
-    var img = document.createElement("img");
-   function show_image(src) {
-	if (state1 == 0) {
-			img.setAttribute("id", "pic");
-			state1 = 1;
-	}
-	else if(state1 == 1) {
-			removeElement("pic");
-			img.setAttribute("id", "pic1");
-			state1 = 2;
-	} else if(state1 == 2){
-			removeElement("pic1");
-			img.setAttribute("id", "pic");
-			state1 = 1;
-	}
+  
+  var img = document.getElementById("image");
+  function show_image(src) {
+    if (state1 == 0) {
+        img.setAttribute("id", "pic");
+        state1 = 1;
+    } else if(state1 == 1) {
+        img.removeAttribute("id");
+        img.setAttribute("id", "pic1");
+        state1 = 2;
+    } else if(state1 == 2){
+        img.removeAttribute("id");
+        img.setAttribute("id", "pic");
+        state1 = 1;
+    }
+    
     img.src = src;
-    img.width = 200;
-    img.height = 200;
-    img.hspace = 200;
-	  img.style.position = "auto";
-	  img.style.top = "250px";
-	  img.style.left = "900px";
-    document.body.appendChild(img);
-	}
+  }
 
    layer1 = "layer1.png";
    layer2 = "layer2.png";
@@ -157,7 +151,6 @@ var alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
   // Play
   play = function () {
     word = word.replace(/\s/g, "-");
-    console.log(word);
     buttons();
     resetGame.disabled = true;
     geusses = [ ];
