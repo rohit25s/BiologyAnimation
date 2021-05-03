@@ -10,6 +10,7 @@ $(document).ready(function() {
 
   var canvas = document.getElementById("canvas");
   var ctx = canvas.getContext("2d");
+  ctx.lineWidth = 3;
 
   $(".imageList").click(function() {
     imageId = $(this).attr("id");
@@ -98,24 +99,24 @@ $(document).ready(function() {
       
       switch (imageId) {
         case "image1":
-          ctx.moveTo(110, 250);
-          ctx.lineTo(800, 345);
+          ctx.moveTo(110, 234);
+          ctx.lineTo(784, 325);
           break;
         case "image2":
-          ctx.moveTo(280, 250);
-          ctx.lineTo(620, 345);
+          ctx.moveTo(280, 234);
+          ctx.lineTo(620, 325);
           break;
         case "image3":
-          ctx.moveTo(450, 250);
-          ctx.lineTo(110, 345);
+          ctx.moveTo(450, 234);
+          ctx.lineTo(110, 325);
           break;
         case "image4":
-          ctx.moveTo(620, 250);
-          ctx.lineTo(450, 345);
+          ctx.moveTo(620, 234);
+          ctx.lineTo(450, 325);
           break;
         case "image5":
-          ctx.moveTo(800, 250);
-          ctx.lineTo(280, 345);
+          ctx.moveTo(784, 234);
+          ctx.lineTo(264, 325);
           break;
       }
 
